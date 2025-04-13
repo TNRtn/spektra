@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>higher order functions</title>
+</head>
+<body>
+<h1>High order functions</h1>
+<label for="callback">Array elements :</label>
+<input type="text" placeholder="eg:-19,20" id="array"/>
+<button value="submit" onclick="calculate()">submit</button>
+<script>
+    function calculate(){
+        let input=document.getElementById('array').value;
+        console.log(input)
+        let array=input.split(',').map(Number);
+        even(array,num=>num%2===0)
+    }
+    function even(number, callback) {
+        res = []
+        for (let i = 0; i < number.length; i++) {
+            if (callback(number[i])) {
+                res.append(number[i])
+            }
+        }
+        console.push(res);
+    }
+</script>
+</body>
+ 
+</html>
